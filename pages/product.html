@@ -1,0 +1,359 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Product details — EcoSankofa Plastics. Learn how each upcycled product is made, what plastic it uses, and its impact on communities."
+    />
+    <title id="page-title">Product | EcoSankofa Plastics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">♻</span>
+          <span class="logo-text">EcoSankofa</span>
+        </a>
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link active">Shop</a>
+          <a href="index.html#impact" class="nav-link">Impact</a>
+          <a href="index.html#story" class="nav-link">Story</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-icons">
+          <button class="icon-btn" id="search-btn" aria-label="Search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <button class="icon-btn cart-btn" id="cart-btn" aria-label="Cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              />
+            </svg>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-link">Home</a>
+          <a href="shop.html" class="mobile-link">Shop</a>
+          <a href="index.html#impact" class="mobile-link">Impact</a>
+          <a href="index.html#story" class="mobile-link">Story</a>
+          <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- PRODUCT DETAIL — dynamically populated by script.js -->
+    <main class="product-detail-page" id="product-main">
+      <!-- Breadcrumb -->
+      <div class="pd-breadcrumb section-container" id="pd-breadcrumb">
+        <a href="index.html">Home</a>
+        <span class="breadcrumb-sep">›</span>
+        <a href="shop.html">Shop</a>
+        <span class="breadcrumb-sep">›</span>
+        <span class="breadcrumb-current" id="pd-breadcrumb-name">Product</span>
+      </div>
+
+      <!-- Loading state -->
+      <div class="pd-loading" id="pd-loading">
+        <div class="loading-spinner"></div>
+        <p>Loading product…</p>
+      </div>
+
+      <!-- Product Content (hidden until loaded) -->
+      <div class="pd-content" id="pd-content" style="display: none">
+        <!-- Top: Image + Info -->
+        <section class="pd-top section-container">
+          <div class="pd-gallery animate-on-scroll">
+            <div class="pd-main-img-wrap">
+              <img src="" alt="" class="pd-main-img" id="pd-img" />
+              <div class="pd-img-placeholder" id="pd-img-placeholder">
+                <span id="pd-img-emoji" style="font-size: 5rem"></span>
+                <p id="pd-img-label"></p>
+              </div>
+              <div class="pd-img-badge" id="pd-img-badge"></div>
+            </div>
+            
+            <!-- Thumbnail Gallery container -->
+            <div class="pd-thumbnail-list" id="pd-thumbnails"></div>
+
+            <!-- Eco verification strip -->
+            <div class="pd-eco-strip">
+              <div class="pd-eco-item">
+                <span>♻</span>
+                <div>
+                  <strong>100% Recycled</strong
+                  ><small>Verified upcycled plastic</small>
+                </div>
+              </div>
+              <div class="pd-eco-item">
+                <span>🤝</span>
+                <div>
+                  <strong>Handcrafted</strong
+                  ><small>Made by trained artisans</small>
+                </div>
+              </div>
+              <div class="pd-eco-item">
+                <span>🌍</span>
+                <div>
+                  <strong>Impact Purchase</strong
+                  ><small>Funds youth training</small>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="pd-info animate-on-scroll delay-1">
+            <span class="product-category-tag" id="pd-category"></span>
+            <h1 class="pd-name" id="pd-name"></h1>
+            <p class="pd-tagline" id="pd-tagline"></p>
+            <div class="pd-price-row">
+              <span class="pd-price" id="pd-price"></span>
+              <span class="pd-unit" id="pd-unit">per item</span>
+            </div>
+
+            <!-- Size / colour options (decorative for prototype) -->
+            <div class="pd-options" id="pd-options-section">
+              <label class="pd-option-label">Colour Variant</label>
+              <div class="pd-colour-dots" id="pd-colours"></div>
+            </div>
+
+            <div class="pd-quantity-row">
+              <label class="pd-option-label">Quantity</label>
+              <div class="pd-qty-control">
+                <button
+                  class="pd-qty-btn"
+                  id="qty-minus"
+                  aria-label="Decrease quantity"
+                >
+                  −
+                </button>
+                <span class="pd-qty-val" id="qty-val">1</span>
+                <button
+                  class="pd-qty-btn"
+                  id="qty-plus"
+                  aria-label="Increase quantity"
+                >
+                  +
+                </button>
+              </div>
+            </div>
+
+            <div class="pd-cta-row">
+              <button class="btn btn-primary pd-add-btn" id="pd-add-btn">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <circle cx="9" cy="21" r="1" />
+                  <circle cx="20" cy="21" r="1" />
+                  <path
+                    d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                  />
+                </svg>
+                Add to Cart
+              </button>
+              <a href="shop.html" class="btn btn-outline">← Back to Shop</a>
+            </div>
+
+            <!-- Trust badges -->
+            <div class="pd-trust">
+              <span>🔒 Secure Checkout</span>
+              <span>📦 Ships in 3–5 days</span>
+              <span>↩ 14-day returns</span>
+            </div>
+          </div>
+        </section>
+
+        <!-- ABOUT / HOW IT'S MADE -->
+        <section class="pd-about section-container animate-on-scroll">
+          <div class="pd-tabs">
+            <button class="pd-tab active" data-tab="story">
+              Product Story
+            </button>
+            <button class="pd-tab" data-tab="process">How It's Made</button>
+            <button class="pd-tab" data-tab="materials">Materials</button>
+            <button class="pd-tab" data-tab="impact">Impact</button>
+          </div>
+
+          <div class="pd-tab-panels">
+            <!-- Story -->
+            <div class="pd-panel active" id="tab-story">
+              <div class="pd-panel-inner">
+                <h2 class="pd-panel-title" id="story-title"></h2>
+                <p id="story-text"></p>
+              </div>
+            </div>
+            <!-- How It's Made -->
+            <div class="pd-panel" id="tab-process">
+              <div class="pd-panel-inner">
+                <h2 class="pd-panel-title">How It's Made</h2>
+                <ol class="pd-process-steps" id="process-steps"></ol>
+              </div>
+            </div>
+            <!-- Materials -->
+            <div class="pd-panel" id="tab-materials">
+              <div class="pd-panel-inner">
+                <h2 class="pd-panel-title">Materials Used</h2>
+                <div class="pd-materials-grid" id="materials-grid"></div>
+              </div>
+            </div>
+            <!-- Impact -->
+            <div class="pd-panel" id="tab-impact">
+              <div class="pd-panel-inner">
+                <h2 class="pd-panel-title">Your Purchase Impact</h2>
+                <div class="pd-impact-list" id="impact-list"></div>
+              </div>
+            </div>
+          </div>
+        </section>
+
+        <!-- RELATED PRODUCTS -->
+        <section class="pd-related animate-on-scroll">
+          <div class="section-container">
+            <div class="section-header">
+              <span class="section-tag">You Might Also Like</span>
+              <h2 class="section-title">More From the Collection</h2>
+            </div>
+            <div class="products-grid" id="related-grid"></div>
+          </div>
+        </section>
+      </div>
+      <!-- /#pd-content -->
+
+      <!-- 404 state -->
+      <div class="pd-not-found" id="pd-not-found" style="display: none">
+        <span style="font-size: 4rem">🔍</span>
+        <h2>Product not found</h2>
+        <p>We couldn't find that product. Browse our full collection below.</p>
+        <a href="shop.html" class="btn btn-primary">View All Products</a>
+      </div>
+    </main>
+
+    <!-- FOOTER -->
+    <footer class="footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo">
+              <span class="logo-icon">♻</span>
+              <span class="logo-text">EcoSankofa</span>
+            </a>
+            <p class="footer-desc">
+              Transforming plastic waste into premium, meaningful products.
+              Every piece has a story.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-btn" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigate</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="index.html#story">Our Story</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact Us</h4>
+            <ul class="footer-links footer-contact">
+              <li>📍 Winneba, Ghana</li>
+              <li>📧 hello@ecosankofa.com</li>
+              <li>📞 +233 24 000 0000</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 EcoSankofa Plastics. All rights reserved.</p>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

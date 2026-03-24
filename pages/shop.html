@@ -1,0 +1,533 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Shop all EcoSankofa upcycled plastic products — Flower Pots, Wall Clocks, Earrings, and Desk Organisers handcrafted in Ghana."
+    />
+    <title>Shop | EcoSankofa Plastics</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Playfair+Display:wght@700;800&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <!-- NAVBAR -->
+    <header class="navbar" id="navbar">
+      <div class="nav-container">
+        <a href="index.html" class="nav-logo">
+          <span class="logo-icon">♻</span>
+          <span class="logo-text">EcoSankofa</span>
+        </a>
+        <nav class="nav-links" id="nav-links">
+          <a href="index.html" class="nav-link">Home</a>
+          <a href="shop.html" class="nav-link active">Shop</a>
+          <a href="index.html#impact" class="nav-link">Impact</a>
+          <a href="index.html#story" class="nav-link">Story</a>
+          <a href="index.html#contact" class="nav-link">Contact</a>
+        </nav>
+        <div class="nav-icons">
+          <button class="icon-btn" id="search-btn" aria-label="Search">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="11" cy="11" r="8" />
+              <line x1="21" y1="21" x2="16.65" y2="16.65" />
+            </svg>
+          </button>
+          <button class="icon-btn cart-btn" id="cart-btn" aria-label="Cart">
+            <svg
+              xmlns="http://www.w3.org/2000/svg"
+              width="20"
+              height="20"
+              fill="none"
+              viewBox="0 0 24 24"
+              stroke="currentColor"
+              stroke-width="2"
+            >
+              <circle cx="9" cy="21" r="1" />
+              <circle cx="20" cy="21" r="1" />
+              <path
+                d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+              />
+            </svg>
+            <span class="cart-badge" id="cart-badge">0</span>
+          </button>
+          <button
+            class="hamburger"
+            id="hamburger"
+            aria-label="Toggle menu"
+            aria-expanded="false"
+          >
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+            <span class="ham-line"></span>
+          </button>
+        </div>
+      </div>
+      <div class="mobile-menu" id="mobile-menu">
+        <nav class="mobile-nav">
+          <a href="index.html" class="mobile-link">Home</a>
+          <a href="shop.html" class="mobile-link">Shop</a>
+          <a href="index.html#impact" class="mobile-link">Impact</a>
+          <a href="index.html#story" class="mobile-link">Story</a>
+          <a href="index.html#contact" class="mobile-link">Contact</a>
+        </nav>
+      </div>
+    </header>
+
+    <!-- SHOP HERO / BREADCRUMB -->
+    <section class="page-hero">
+      <div class="section-container">
+        <div class="breadcrumb">
+          <a href="index.html">Home</a>
+          <span class="breadcrumb-sep">›</span>
+          <span class="breadcrumb-current">Shop</span>
+        </div>
+        <div class="page-hero-content animate-on-scroll">
+          <span class="section-tag">All Products</span>
+          <h1 class="section-title">The Full Collection</h1>
+          <p class="section-subtitle">
+            Every item is handcrafted in Winneba from 100% recovered plastic
+            waste. Pick one — or gift the planet.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar">
+      <div class="section-container">
+        <div class="filter-inner">
+          <div
+            class="filter-pills"
+            id="filter-pills"
+            role="group"
+            aria-label="Filter products"
+          >
+            <button class="filter-pill active" data-filter="all">
+              All Products
+            </button>
+            <button class="filter-pill" data-filter="home">Home & Décor</button>
+            <button class="filter-pill" data-filter="accessories">
+              Accessories
+            </button>
+            <button class="filter-pill" data-filter="desk">
+              Desk & Office
+            </button>
+          </div>
+          <p class="filter-count" id="filter-count">4 products</p>
+        </div>
+      </div>
+    </div>
+
+    <!-- PRODUCTS GRID -->
+    <section class="shop-section">
+      <div class="section-container">
+        <div class="shop-grid" id="shop-grid">
+          <!-- Flower Pot -->
+          <article class="product-card animate-on-scroll" data-category="home">
+            <div class="product-img-wrapper">
+              <img
+                src=""
+                alt="Upcycled plastic flower pot — a colourful, durable planting pot shaped from fused HDPE plastic bottles"
+                class="product-img"
+                loading="lazy"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #e8f5ee, #c8e6d8)"
+              >
+                <span>🌸</span>
+                <p>Eco Flower Pot</p>
+              </div>
+              <div class="product-badge">Bestseller</div>
+              <a href="product.html?id=flower-pot" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Home &amp; Décor</span>
+              <h3 class="product-name">Eco Bloom Flower Pot</h3>
+              <p class="product-desc">
+                Moulded from fused HDPE bottles. Weather-resistant, colourful,
+                and 100% plastic waste.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 120</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=flower-pot" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Eco Bloom Flower Pot"
+                    data-price="120"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                      />
+                    </svg>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Wall Clock -->
+          <article
+            class="product-card animate-on-scroll delay-1"
+            data-category="home"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src="./assests/clock/main-clock.png"
+                alt="Recycled plastic wall clock — a minimalist round clock face made from flattened plastic lids and bottle caps"
+                class="product-img"
+                loading="lazy"
+                onload="this.nextElementSibling.style.display='none'"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #e0f2fe, #bae6fd)"
+              >
+                <span>🕐</span>
+                <p>Wall Clock</p>
+              </div>
+              <div class="product-badge new-badge">New Arrival</div>
+              <a href="product.html?id=clock" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Home &amp; Décor</span>
+              <h3 class="product-name">Sankofa Wall Clock</h3>
+              <p class="product-desc">
+                Flat-pressed bottle caps form a striking mosaic clock face.
+                Functional art for any wall.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 210</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=clock" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Sankofa Wall Clock"
+                    data-price="210"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                      />
+                    </svg>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Earrings -->
+          <article
+            class="product-card animate-on-scroll delay-2"
+            data-category="accessories"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src=""
+                alt="Recycled plastic earrings — lightweight, colourful drop earrings cut and hand-painted from reclaimed plastic sheeting"
+                class="product-img"
+                loading="lazy"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #fce7f3, #fbcfe8)"
+              >
+                <span>💎</span>
+                <p>Plastic Earrings</p>
+              </div>
+              <div class="product-badge eco-badge">Eco Pick</div>
+              <a href="product.html?id=earrings" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Accessories</span>
+              <h3 class="product-name">Kente Drop Earrings</h3>
+              <p class="product-desc">
+                Cut from reclaimed plastic sheeting &amp; hand-painted in
+                Kente-inspired geometric patterns.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 55</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=earrings" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Kente Drop Earrings"
+                    data-price="55"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                      />
+                    </svg>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Desk Organizer -->
+          <article
+            class="product-card animate-on-scroll delay-3"
+            data-category="desk"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src="./assests/Desk_Organizer/main-bucket.png"
+                alt="Recycled plastic mini desk organizer — a compact pen and pencil holder crafted from melted and moulded PET bottles"
+                class="product-img"
+                loading="lazy"
+                onload="this.nextElementSibling.style.display='none'"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #fef9c3, #fde68a)"
+              >
+                <span>✏️</span>
+                <p>Desk Organizer</p>
+              </div>
+              <a href="product.html?id=organizer" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Desk &amp; Office</span>
+              <h3 class="product-name">Upcycled Desk Organizer</h3>
+              <p class="product-desc">
+                Holds pens, pencils &amp; scissors. Shredded PET moulded into a
+                compact tidy — great gift too.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 75</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=organizer" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Upcycled Desk Organizer"
+                    data-price="75"
+                  >
+                    <svg
+                      xmlns="http://www.w3.org/2000/svg"
+                      width="16"
+                      height="16"
+                      fill="none"
+                      viewBox="0 0 24 24"
+                      stroke="currentColor"
+                      stroke-width="2"
+                    >
+                      <circle cx="9" cy="21" r="1" />
+                      <circle cx="20" cy="21" r="1" />
+                      <path
+                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
+                      />
+                    </svg>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+        </div>
+        <!-- /.shop-grid -->
+      </div>
+    </section>
+
+    <!-- IMPACT STRIP -->
+    <section class="impact-strip animate-on-scroll">
+      <div class="section-container">
+        <div class="impact-strip-grid">
+          <div class="impact-strip-item">
+            <span>♻</span>
+            <p>100% Upcycled Plastic</p>
+          </div>
+          <div class="impact-strip-item">
+            <span>🤝</span>
+            <p>Ethically Handcrafted</p>
+          </div>
+          <div class="impact-strip-item">
+            <span>🚚</span>
+            <p>Ships Nationwide</p>
+          </div>
+          <div class="impact-strip-item">
+            <span>🌍</span>
+            <p>Carbon Positive</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer id="contact" class="footer">
+      <div class="section-container">
+        <div class="footer-grid">
+          <div class="footer-brand">
+            <a href="index.html" class="nav-logo footer-logo">
+              <span class="logo-icon">♻</span>
+              <span class="logo-text">EcoSankofa</span>
+            </a>
+            <p class="footer-desc">
+              Transforming plastic waste into premium, meaningful products.
+              Every piece has a story of community, craft, and care.
+            </p>
+            <div class="social-icons">
+              <a href="#" class="social-btn" aria-label="Facebook">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M18 2h-3a5 5 0 0 0-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 0 1 1-1h3z"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="Instagram">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  stroke-width="2"
+                >
+                  <rect x="2" y="2" width="20" height="20" rx="5" ry="5" />
+                  <circle cx="12" cy="12" r="4" />
+                  <circle
+                    cx="17.5"
+                    cy="6.5"
+                    r="1"
+                    fill="currentColor"
+                    stroke="none"
+                  />
+                </svg>
+              </a>
+              <a href="#" class="social-btn" aria-label="YouTube">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  width="18"
+                  height="18"
+                  viewBox="0 0 24 24"
+                  fill="currentColor"
+                >
+                  <path
+                    d="M22.54 6.42a2.78 2.78 0 0 0-1.95-1.96C18.88 4 12 4 12 4s-6.88 0-8.59.46a2.78 2.78 0 0 0-1.95 1.96A29 29 0 0 0 1 12a29 29 0 0 0 .46 5.58A2.78 2.78 0 0 0 3.41 19.54C5.12 20 12 20 12 20s6.88 0 8.59-.46a2.78 2.78 0 0 0 1.95-1.96A29 29 0 0 0 23 12a29 29 0 0 0-.46-5.58z"
+                  />
+                  <polygon
+                    points="9.75 15.02 15.5 12 9.75 8.98 9.75 15.02"
+                    fill="white"
+                  />
+                </svg>
+              </a>
+            </div>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Navigate</h4>
+            <ul class="footer-links">
+              <li><a href="index.html">Home</a></li>
+              <li><a href="shop.html">Shop</a></li>
+              <li><a href="index.html#impact">Impact</a></li>
+              <li><a href="index.html#story">Our Story</a></li>
+              <li><a href="index.html#contact">Contact</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Products</h4>
+            <ul class="footer-links">
+              <li><a href="product.html?id=flower-pot">Flower Pots</a></li>
+              <li><a href="product.html?id=clock">Wall Clocks</a></li>
+              <li><a href="product.html?id=earrings">Earrings</a></li>
+              <li><a href="product.html?id=organizer">Desk Organisers</a></li>
+            </ul>
+          </div>
+          <div class="footer-col">
+            <h4 class="footer-col-title">Contact Us</h4>
+            <ul class="footer-links footer-contact">
+              <li>📍 Winneba, Ghana</li>
+              <li>📧 hello@ecosankofa.com</li>
+              <li>📞 +233 24 000 0000</li>
+            </ul>
+          </div>
+        </div>
+        <div class="footer-bottom">
+          <p>&copy; 2026 EcoSankofa Plastics. All rights reserved.</p>
+          <div class="footer-bottom-links">
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <div class="toast" id="toast" role="alert" aria-live="polite"></div>
+    <script src="script.js"></script>
+  </body>
+</html>

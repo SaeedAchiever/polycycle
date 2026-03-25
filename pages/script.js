@@ -10,103 +10,6 @@
    PRODUCT DATA
    ============================================================ */
 const PRODUCTS = {
-  "flower-pot": {
-    id: "flower-pot",
-    name: "Eco Bloom Flower Pot",
-    tagline:
-      "Bring life to your space with a pot made from the life we almost threw away.",
-    price: 120,
-    emoji: "🌸",
-    imgLabel: "Eco Bloom Flower Pot",
-    badge: "Bestseller",
-    category: "Home & Décor",
-    colours: ["#4ade80", "#f97316", "#60a5fa", "#f472b6"],
-    story: {
-      title: "A Planter Born from Waste",
-      text: `Every Eco Bloom Flower Pot begins its life as discarded HDPE (High-Density Polyethylene) 
-      plastic bottles collected from markets and streets in Winneba. These bottles — shampoo containers, 
-      detergent bottles, and plastic jugs — had been dumped or burnt, releasing toxic fumes into communities.
-      
-      Our artisans sort and clean the bottles by colour group, then shred them into small chips. The chips 
-      are placed into custom steel moulds and heated at precisely 180°C until they fuse together under 
-      pressure. The result is a dense, weather-resistant planter that is stronger than virgin plastic, 
-      absolutely waterproof, and full of beautiful colour variation — because no two batches are identical.
-      
-      Your Eco Bloom Flower Pot is a living proof that beauty and sustainability are not opposites.`,
-    },
-    process: [
-      {
-        title: "Collection",
-        desc: "HDPE bottles are collected from markets, streets, and community drop points.",
-      },
-      {
-        title: "Sorting & Cleaning",
-        desc: "Bottles are sorted by resin type and colour, then washed with eco-friendly soap.",
-      },
-      {
-        title: "Shredding",
-        desc: "Clean plastic is fed through a manual shredder to produce uniform chips.",
-      },
-      {
-        title: "Moulding",
-        desc: "Chips are packed into steel pot-shaped moulds and heated to 180°C for fusion.",
-      },
-      {
-        title: "Cooling & Finishing",
-        desc: "Pots are cooled slowly, removed from moulds, sanded, and quality-checked.",
-      },
-      {
-        title: "Dispatch",
-        desc: "Finished pots are wrapped in recycled paper and shipped to you.",
-      },
-    ],
-    materials: [
-      {
-        icon: "🧴",
-        name: "HDPE Plastic",
-        desc: "Sourced from discarded shampoo & detergent bottles",
-      },
-      {
-        icon: "💧",
-        name: "Eco Soap",
-        desc: "Biodegradable cleaning agent used in washing",
-      },
-      {
-        icon: "🔥",
-        name: "Solar Heat Press",
-        desc: "Solar-assisted heating for lower carbon output",
-      },
-      {
-        icon: "📄",
-        name: "Recycled Wrap",
-        desc: "Packaged in repurposed newsprint",
-      },
-    ],
-    impact: [
-      {
-        icon: "🍶",
-        title: "Diverts ~8 Bottles",
-        desc: "Each pot reuses approximately 8 HDPE plastic bottles from landfill.",
-      },
-      {
-        icon: "👐",
-        title: "Pays One Hour of Training",
-        desc: "Your purchase funds one hour of skills training for a youth artisan.",
-      },
-      {
-        icon: "🌿",
-        title: "Saves 220g CO₂",
-        desc: "Compared to producing a new plastic pot, recycled plastic saves significant emissions.",
-      },
-      {
-        icon: "🏘️",
-        title: "Community Income",
-        desc: "Revenue flows directly to artisan cooperatives in Agbogbloshie.",
-      },
-    ],
-    related: ["clock", "organizer", "earrings"],
-  },
-
   clock: {
     id: "clock",
     name: "Sankofa Wall Clock",
@@ -204,105 +107,7 @@ const PRODUCTS = {
         desc: "Higher-value products fund longer-term skills certification for our artisans.",
       },
     ],
-    related: ["flower-pot", "organizer", "earrings"],
-  },
-
-  earrings: {
-    id: "earrings",
-    name: "Kente Drop Earrings",
-    tagline:
-      "Wear your values. Light enough to forget you have them on; meaningful enough to never forget why.",
-    price: 55,
-    emoji: "💎",
-    imgLabel: "Kente Drop Earrings",
-    badge: "Eco Pick",
-    category: "Accessories",
-    colours: ["#dc2626", "#2563eb", "#16a34a", "#d97706"],
-    story: {
-      title: "Adornment with Accountability",
-      text: `The Kente Drop Earrings are inspired by Ghana's iconic Kente cloth — a hand-woven fabric 
-      of silk and cotton with a history going back to the 11th century. Just as Kente is woven 
-      strip by strip, our earrings are built layer by layer, using thin sheets of recovered LDPE 
-      plastic (grocery bags, thin packaging film, and bubble wrap) that have been cleaned, layered, 
-      and fused into colourful composite sheets.
-      
-      Each pair is individually cut using hand templates in geometric shapes — diamonds, drops, 
-      chevrons — then hand-painted with non-toxic acrylic paint and sealed with a bio-based varnish. 
-      Hypoallergenic stainless steel hooks complete the earring. No two pairs are ever exactly alike.
-      
-      They are light, bold, and a conversation starter about what fashion can and should be.`,
-    },
-    process: [
-      {
-        title: "Film Plastic Collection",
-        desc: "LDPE film plastics (bags, packaging film) are collected from markets.",
-      },
-      {
-        title: "Cleaning",
-        desc: "Plastic film is washed in warm water with biodegradable soap and dried in the sun.",
-      },
-      {
-        title: "Lamination",
-        desc: "Layers of coloured film are sandwiched and fused at low heat (120°C) to create composite sheets.",
-      },
-      {
-        title: "Cutting",
-        desc: "Hand templates are used to cut precise geometric shapes from the composite sheets.",
-      },
-      {
-        title: "Hand Painting",
-        desc: "Artisans paint Kente-inspired patterns using non-toxic acrylic paints.",
-      },
-      {
-        title: "Sealing & Assembly",
-        desc: "Pieces are sealed with bio-based varnish, drilled, and fitted with stainless steel hooks.",
-      },
-    ],
-    materials: [
-      {
-        icon: "🛍️",
-        name: "LDPE Film Plastic",
-        desc: "Sourced from grocery bags and thin packaging film",
-      },
-      {
-        icon: "🎨",
-        name: "Non-Toxic Acrylics",
-        desc: "Water-based, non-toxic paints in Kente colour palette",
-      },
-      {
-        icon: "🌿",
-        name: "Bio-Based Varnish",
-        desc: "Plant-derived sealant for durability and shine",
-      },
-      {
-        icon: "🪝",
-        name: "Stainless Steel Hooks",
-        desc: "Hypoallergenic earring hooks — the only virgin material",
-      },
-    ],
-    impact: [
-      {
-        icon: "🛍️",
-        title: "Rescues Grocery Bags",
-        desc: "Each pair diverts approximately 15g of plastic film from burning or littering.",
-      },
-      {
-        icon: "👩‍🎨",
-        title: "Women-Led Production",
-        desc: "Our earring workshop is 90% staffed by women artisans from the community.",
-      },
-      {
-        icon: "💰",
-        title: "Fair Wage Certified",
-        desc: "All artisans earn above the Ghanaian living wage for this work.",
-      },
-      {
-        icon: "🌱",
-        title: "Supports Plastic Film Recycling",
-        desc: "Demand for earrings creates an economic incentive to collect difficult-to-recycle plastics.",
-      },
-    ],
-    related: ["flower-pot", "clock", "organizer"],
+    related: ["organizer", "container", "rack"],
   },
 
   organizer: {
@@ -409,7 +214,123 @@ const PRODUCTS = {
         desc: "At end of life, the organizer can be returned to us and remoulded into a new product.",
       },
     ],
-    related: ["flower-pot", "clock", "earrings"],
+    related: ["clock", "container", "rack"],
+  },
+
+  container: {
+    id: "container",
+    name: "Eco Storage Container",
+    tagline: "Tidy up with style, made from the bits we almost missed.",
+    price: 150,
+    emoji: "📦",
+    imgLabel: "Eco Storage Container",
+    badge: "Eco Pick",
+    category: "Home & Décor",
+    colours: ["#6366f1", "#ec4899", "#f59e0b"],
+    images: [
+      "./assests/container/Screenshot_20260325_074930_Grok.jpg",
+      "./assests/container/Screenshot_20260325_074849_Grok.jpg",
+      "./assests/container/Screenshot_20260325_074757_Grok.jpg",
+    ],
+    story: {
+      title: "Artisan Storage Solution",
+      text: `Our Eco Storage Container is a testament to the beauty of fused HDPE plastic. 
+      By combining discarded shampoo and detergent bottles, our artisans create these 
+      vibrant, durable containers that are both functional and decorative. 
+      The unique marble-like patterns are a natural result of the heat-pressing process, 
+      ensuring no two containers are ever alike.`,
+    },
+    process: [
+      { title: "Collection", desc: "HDPE plastic bottles are gathered from community centers." },
+      { title: "Shredding", desc: "Cleaned bottles are shredded into multi-coloured flakes." },
+      { title: "Fusion", desc: "Flakes are heat-pressed into thick, durable sheets." },
+      { title: "Assembly", desc: "Sheets are precision-cut and hand-assembled into containers." },
+    ],
+    materials: [
+      { icon: "🧴", name: "Recycled HDPE", desc: "High-density polyethylene from consumer waste" },
+      { icon: "🧵", name: "Strong Thread", desc: "Industrial grade binding for structural integrity" },
+    ],
+    impact: [
+      { icon: "🍶", title: "Rescues 15 Bottles", desc: "Each container reuses about 15 HDPE bottles." },
+      { icon: "🌍", title: "Reduces Carbon", desc: "Low-energy fusion process minimizes emissions." },
+    ],
+    related: ["clock", "organizer", "rack"],
+  },
+
+  rack: {
+    id: "rack",
+    name: "Modular Utility Rack",
+    tagline: "Strength and elegance, tiered from the ground up.",
+    price: 450,
+    emoji: "🔳",
+    imgLabel: "Modular Utility Rack",
+    badge: "Premium Choice",
+    category: "Furniture",
+    colours: ["#ffffff", "#f3f4f6"],
+    images: [
+      "./assests/rack/file_000000001d7471fdb7397483d98857a0.png",
+      "./assests/rack/file_00000000528c71fdaf2aec26610a642e.png",
+      "./assests/rack/file_00000000f20c71fd80f06d5d3aafc1a6.png",
+    ],
+    story: {
+      title: "Sustainable Structure",
+      text: `The Modular Utility Rack redefines what is possible with upcycled materials. 
+      Designed for durability and minimalist appeal, this four-tier rack is crafted from 
+      pure white HDPE plastic, giving it a clean, premium look that fits into any modern home. 
+      It's water-resistant, termite-proof, and significantly more sustainable than virgin plastic.`,
+    },
+    process: [
+      { title: "Sorting", desc: "Pure white plastic waste is selected for a uniform finish." },
+      { title: "Moulding", desc: "The thick tiers and legs are injection-moulded for maximum strength." },
+      { title: "Sanding", desc: "Each piece is hand-finished for a smooth, matte texture." },
+    ],
+    materials: [
+      { icon: "⚪", name: "White HDPE", desc: "Premium grade recycled plastic" },
+      { icon: "🔩", name: "Stainless Steel", desc: "Internal structural reinforcements" },
+    ],
+    impact: [
+      { icon: "📦", title: "Diverts 5kg Waste", desc: "One rack reuses over 5kg of discarded plastic." },
+      { icon: "⏳", title: "Built to Last", desc: "Durable design reduces the need for replacements." },
+    ],
+    related: ["round_table", "container", "clock"],
+  },
+
+  round_table: {
+    id: "round_table",
+    name: "Reclaimed Round Table",
+    tagline: "A center piece that brings the community together.",
+    price: 850,
+    emoji: "⭕",
+    imgLabel: "Reclaimed Round Table",
+    badge: "Limited Edition",
+    category: "Furniture",
+    colours: ["#a78bfa", "#60a5fa", "#fbbf24"],
+    images: [
+      "./assests/round_table/main_image.jpg",
+      "./assests/round_table/image_1.png",
+      "./assests/round_table/image_2.png",
+    ],
+    story: {
+      title: "The Circle of Change",
+      text: `Our Reclaimed Round Table features a stunning mosaic top made from thousands 
+      of tiny plastic fragments. This limited edition piece is handcrafted by master 
+      artisans in Winneba. The base is made from reclaimed wood, creating a perfect 
+      harmony between nature and upcycled engineering.`,
+    },
+    process: [
+      { title: "Mosaic Art", desc: "Artisans hand-placed every plastic fragment on the tabletop." },
+      { title: "Woodwork", desc: "The base is carved from salvaged furniture-grade wood." },
+      { title: "Varnishing", desc: "Sealed with eco-friendly protective coating for daily use." },
+    ],
+    materials: [
+      { icon: "🧩", name: "Plastic Mosaic", desc: "Fragments of various upcycled plastic types" },
+      { icon: "🪵", name: "Salvaged Wood", desc: "Reclaimed timber for a sturdy base" },
+    ],
+    impact: [
+      { icon: "🏆", title: "Supports Masters", desc: "Directly funds hours of master artisan craftsmanship." },
+      { icon: "🏺", title: "Heirloom Quality", desc: "A sustainable alternative to fast furniture." },
+    ],
+    related: ["rack", "clock", "organizer"],
   },
 };
 

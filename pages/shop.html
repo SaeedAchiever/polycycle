@@ -120,14 +120,12 @@
               All Products
             </button>
             <button class="filter-pill" data-filter="home">Home & Décor</button>
-            <button class="filter-pill" data-filter="accessories">
-              Accessories
-            </button>
+            <button class="filter-pill" data-filter="furniture">Furniture</button>
             <button class="filter-pill" data-filter="desk">
               Desk & Office
             </button>
           </div>
-          <p class="filter-count" id="filter-count">4 products</p>
+          <p class="filter-count" id="filter-count">5 products</p>
         </div>
       </div>
     </div>
@@ -136,77 +134,15 @@
     <section class="shop-section">
       <div class="section-container">
         <div class="shop-grid" id="shop-grid">
-          <!-- Flower Pot -->
-          <article class="product-card animate-on-scroll" data-category="home">
-            <div class="product-img-wrapper">
-              <img
-                src=""
-                alt="Upcycled plastic flower pot — a colourful, durable planting pot shaped from fused HDPE plastic bottles"
-                class="product-img"
-                loading="lazy"
-              />
-              <div
-                class="product-img-placeholder"
-                style="background: linear-gradient(135deg, #e8f5ee, #c8e6d8)"
-              >
-                <span>🌸</span>
-                <p>Eco Flower Pot</p>
-              </div>
-              <div class="product-badge">Bestseller</div>
-              <a href="product.html?id=flower-pot" class="product-quick-view"
-                >View Details</a
-              >
-            </div>
-            <div class="product-info">
-              <span class="product-category-tag">Home &amp; Décor</span>
-              <h3 class="product-name">Eco Bloom Flower Pot</h3>
-              <p class="product-desc">
-                Moulded from fused HDPE bottles. Weather-resistant, colourful,
-                and 100% plastic waste.
-              </p>
-              <div class="product-footer">
-                <span class="product-price">GH₵ 120</span>
-                <div class="product-action-row">
-                  <a href="product.html?id=flower-pot" class="btn btn-details"
-                    >Details</a
-                  >
-                  <button
-                    class="btn btn-cart"
-                    onclick="addToCart(this)"
-                    data-name="Eco Bloom Flower Pot"
-                    data-price="120"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path
-                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                      />
-                    </svg>
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-
           <!-- Wall Clock -->
           <article
-            class="product-card animate-on-scroll delay-1"
+            class="product-card animate-on-scroll"
             data-category="home"
           >
             <div class="product-img-wrapper">
               <img
                 src="./assests/clock/main-clock.png"
-                alt="Recycled plastic wall clock — a minimalist round clock face made from flattened plastic lids and bottle caps"
+                alt="Sankofa Wall Clock"
                 class="product-img"
                 loading="lazy"
                 onload="this.nextElementSibling.style.display='none'"
@@ -228,7 +164,6 @@
               <h3 class="product-name">Sankofa Wall Clock</h3>
               <p class="product-desc">
                 Flat-pressed bottle caps form a striking mosaic clock face.
-                Functional art for any wall.
               </p>
               <div class="product-footer">
                 <span class="product-price">GH₵ 210</span>
@@ -240,88 +175,7 @@
                     class="btn btn-cart"
                     onclick="addToCart(this)"
                     data-name="Sankofa Wall Clock"
-                    data-price="210"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path
-                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                      />
-                    </svg>
-                    Add to Cart
-                  </button>
-                </div>
-              </div>
-            </div>
-          </article>
-
-          <!-- Earrings -->
-          <article
-            class="product-card animate-on-scroll delay-2"
-            data-category="accessories"
-          >
-            <div class="product-img-wrapper">
-              <img
-                src=""
-                alt="Recycled plastic earrings — lightweight, colourful drop earrings cut and hand-painted from reclaimed plastic sheeting"
-                class="product-img"
-                loading="lazy"
-              />
-              <div
-                class="product-img-placeholder"
-                style="background: linear-gradient(135deg, #fce7f3, #fbcfe8)"
-              >
-                <span>💎</span>
-                <p>Plastic Earrings</p>
-              </div>
-              <div class="product-badge eco-badge">Eco Pick</div>
-              <a href="product.html?id=earrings" class="product-quick-view"
-                >View Details</a
-              >
-            </div>
-            <div class="product-info">
-              <span class="product-category-tag">Accessories</span>
-              <h3 class="product-name">Kente Drop Earrings</h3>
-              <p class="product-desc">
-                Cut from reclaimed plastic sheeting &amp; hand-painted in
-                Kente-inspired geometric patterns.
-              </p>
-              <div class="product-footer">
-                <span class="product-price">GH₵ 55</span>
-                <div class="product-action-row">
-                  <a href="product.html?id=earrings" class="btn btn-details"
-                    >Details</a
-                  >
-                  <button
-                    class="btn btn-cart"
-                    onclick="addToCart(this)"
-                    data-name="Kente Drop Earrings"
-                    data-price="55"
-                  >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path
-                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                      />
-                    </svg>
                     Add to Cart
                   </button>
                 </div>
@@ -331,13 +185,13 @@
 
           <!-- Desk Organizer -->
           <article
-            class="product-card animate-on-scroll delay-3"
+            class="product-card animate-on-scroll delay-1"
             data-category="desk"
           >
             <div class="product-img-wrapper">
               <img
                 src="./assests/Desk_Organizer/main-bucket.png"
-                alt="Recycled plastic mini desk organizer — a compact pen and pencil holder crafted from melted and moulded PET bottles"
+                alt="Upcycled Desk Organizer"
                 class="product-img"
                 loading="lazy"
                 onload="this.nextElementSibling.style.display='none'"
@@ -357,8 +211,7 @@
               <span class="product-category-tag">Desk &amp; Office</span>
               <h3 class="product-name">Upcycled Desk Organizer</h3>
               <p class="product-desc">
-                Holds pens, pencils &amp; scissors. Shredded PET moulded into a
-                compact tidy — great gift too.
+                Shredded PET moulded into a compact multi-compartment tidy.
               </p>
               <div class="product-footer">
                 <span class="product-price">GH₵ 75</span>
@@ -370,23 +223,154 @@
                     class="btn btn-cart"
                     onclick="addToCart(this)"
                     data-name="Upcycled Desk Organizer"
-                    data-price="75"
                   >
-                    <svg
-                      xmlns="http://www.w3.org/2000/svg"
-                      width="16"
-                      height="16"
-                      fill="none"
-                      viewBox="0 0 24 24"
-                      stroke="currentColor"
-                      stroke-width="2"
-                    >
-                      <circle cx="9" cy="21" r="1" />
-                      <circle cx="20" cy="21" r="1" />
-                      <path
-                        d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"
-                      />
-                    </svg>
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Storage Container -->
+          <article
+            class="product-card animate-on-scroll delay-2"
+            data-category="home"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src="./assests/container/Screenshot_20260325_074930_Grok.jpg"
+                alt="Eco Storage Container"
+                class="product-img"
+                loading="lazy"
+                onload="this.nextElementSibling.style.display='none'"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #e8f5ee, #c8e6d8)"
+              >
+                <span>📦</span>
+                <p>Storage Container</p>
+              </div>
+              <div class="product-badge eco-badge">Eco Pick</div>
+              <a href="product.html?id=container" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Home &amp; Décor</span>
+              <h3 class="product-name">Eco Storage Container</h3>
+              <p class="product-desc">
+                Hand-assembled from fused HDPE plastic with unique marble patterns.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 150</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=container" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Eco Storage Container"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Utility Rack -->
+          <article
+            class="product-card animate-on-scroll delay-3"
+            data-category="furniture"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src="./assests/rack/file_000000001d7471fdb7397483d98857a0.png"
+                alt="Modular Utility Rack"
+                class="product-img"
+                loading="lazy"
+                onload="this.nextElementSibling.style.display='none'"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #f3f4f6, #d1d5db)"
+              >
+                <span>🔳</span>
+                <p>Utility Rack</p>
+              </div>
+              <div class="product-badge">Premium Choice</div>
+              <a href="product.html?id=rack" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Furniture</span>
+              <h3 class="product-name">Modular Utility Rack</h3>
+              <p class="product-desc">
+                Minimalist four-tier rack crafted from durable white HDPE plastic.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 450</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=rack" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Modular Utility Rack"
+                  >
+                    Add to Cart
+                  </button>
+                </div>
+              </div>
+            </div>
+          </article>
+
+          <!-- Round Table -->
+          <article
+            class="product-card animate-on-scroll delay-4"
+            data-category="furniture"
+          >
+            <div class="product-img-wrapper">
+              <img
+                src="./assests/round_table/main_image.jpg"
+                alt="Reclaimed Round Table"
+                class="product-img"
+                loading="lazy"
+                onload="this.nextElementSibling.style.display='none'"
+              />
+              <div
+                class="product-img-placeholder"
+                style="background: linear-gradient(135deg, #ede9fe, #ddd6fe)"
+              >
+                <span>⭕</span>
+                <p>Round Table</p>
+              </div>
+              <div class="product-badge">Limited Edition</div>
+              <a href="product.html?id=round_table" class="product-quick-view"
+                >View Details</a
+              >
+            </div>
+            <div class="product-info">
+              <span class="product-category-tag">Furniture</span>
+              <h3 class="product-name">Reclaimed Round Table</h3>
+              <p class="product-desc">
+                Artisan mosaic top made from plastic fragments on salvaged wood.
+              </p>
+              <div class="product-footer">
+                <span class="product-price">GH₵ 850</span>
+                <div class="product-action-row">
+                  <a href="product.html?id=round_table" class="btn btn-details"
+                    >Details</a
+                  >
+                  <button
+                    class="btn btn-cart"
+                    onclick="addToCart(this)"
+                    data-name="Reclaimed Round Table"
+                  >
                     Add to Cart
                   </button>
                 </div>

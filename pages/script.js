@@ -15,7 +15,7 @@ const PRODUCTS = {
     name: "Sankofa Wall Clock",
     tagline:
       "Time told by the caps that once held nothing — now holding meaning.",
-    price: 210,
+    price: 29.99,
     emoji: "🕐",
     imgLabel: "Sankofa Wall Clock",
     badge: "New Arrival",
@@ -115,7 +115,7 @@ const PRODUCTS = {
     name: "Upcycled Desk Organizer",
     tagline:
       "A tidy desk. A tidier planet. Moulded from the mess we left behind.",
-    price: 75,
+    price: 9.99,
     emoji: "✏️",
     imgLabel: "Upcycled Desk Organizer",
     badge: null,
@@ -221,7 +221,7 @@ const PRODUCTS = {
     id: "container",
     name: "Eco Storage Container",
     tagline: "Tidy up with style, made from the bits we almost missed.",
-    price: 150,
+    price: 19.99,
     emoji: "📦",
     imgLabel: "Eco Storage Container",
     badge: "Eco Pick",
@@ -261,7 +261,7 @@ const PRODUCTS = {
     id: "rack",
     name: "Modular Utility Rack",
     tagline: "Strength and elegance, tiered from the ground up.",
-    price: 450,
+    price: 39.99,
     emoji: "🔳",
     imgLabel: "Modular Utility Rack",
     badge: "Premium Choice",
@@ -299,7 +299,7 @@ const PRODUCTS = {
     id: "round_table",
     name: "Reclaimed Round Table",
     tagline: "A center piece that brings the community together.",
-    price: 850,
+    price: 49.99,
     emoji: "⭕",
     imgLabel: "Reclaimed Round Table",
     badge: "Limited Edition",
@@ -470,29 +470,61 @@ if (statsSection) {
 }
 
 /* ============================================================
-   CART — shared across all pages
+   CART — shared across all pages (localStorage persistence)
    ============================================================ */
-let cartCount = 0;
+let cart = JSON.parse(localStorage.getItem("ecoSankofaCart")) || [];
+
 const cartBadge = document.getElementById("cart-badge");
 const toast = document.getElementById("toast");
 let toastTimer = null;
 
 function showToast(msg) {
+  if (!toast) return;
   toast.textContent = msg;
   toast.classList.add("show");
   clearTimeout(toastTimer);
   toastTimer = setTimeout(() => toast.classList.remove("show"), 3000);
 }
 
-function addToCart(btn) {
-  cartCount++;
-  if (cartBadge) {
-    cartBadge.textContent = cartCount;
-    cartBadge.style.transform = "scale(1.5)";
-    setTimeout(() => {
-      cartBadge.style.transform = "scale(1)";
-    }, 250);
+function updateCartBadge() {
+  if (!cartBadge) return;
+  const totalItems = cart.reduce((sum, item) => sum + item.quantity, 0);
+  cartBadge.textContent = totalItems;
+  
+  // Animation effect
+  if (totalItems > 0) {
+    cartBadge.style.transform = "scale(1.2)";
+    setTimeout(() => { cartBadge.style.transform = "scale(1)"; }, 200);
   }
+}
+
+function saveCart() {
+  localStorage.setItem("ecoSankofaCart", JSON.stringify(cart));
+  updateCartBadge();
+}
+
+/**
+ * addToCart from product cards (index/shop)
+ */
+function addToCart(btn) {
+  const name = btn.dataset.name;
+  // Find product ID by name if possible, or use a data-id attribute (recommended)
+  // For now, let's assume we can find the ID by looking through PRODUCTS
+  let productId = btn.dataset.id;
+  if (!productId) {
+    productId = Object.keys(PRODUCTS).find(k => PRODUCTS[k].name === name);
+  }
+  
+  if (!productId) return showToast("Error adding product.");
+
+  const existingItem = cart.find(item => item.id === productId);
+  if (existingItem) {
+    existingItem.quantity += 1;
+  } else {
+    cart.push({ id: productId, quantity: 1 });
+  }
+
+  saveCart();
 
   const origHTML = btn.innerHTML;
   btn.innerHTML = "✓ Added!";
@@ -504,8 +536,11 @@ function addToCart(btn) {
     btn.disabled = false;
   }, 1800);
 
-  showToast(`🛒 "${btn.dataset.name}" added to cart!`);
+  showToast(`🛒 "${name}" added to cart!`);
 }
+
+// Initial badge update
+updateCartBadge();
 
 /* ============================================================
    SEARCH BUTTON
@@ -644,7 +679,7 @@ if (filterPills.length && shopGrid) {
     document.getElementById("pd-category").textContent = product.category;
     document.getElementById("pd-name").textContent = product.name;
     document.getElementById("pd-tagline").textContent = product.tagline;
-    document.getElementById("pd-price").textContent = `GH₵ ${product.price}`;
+    document.getElementById("pd-price").textContent = `$ ${product.price}`;
 
     // Colour dots
     const dotsContainer = document.getElementById("pd-colours");
@@ -683,14 +718,15 @@ if (filterPills.length && shopGrid) {
     document
       .getElementById("pd-add-btn")
       .addEventListener("click", function () {
-        cartCount += qty;
-        if (cartBadge) {
-          cartBadge.textContent = cartCount;
-          cartBadge.style.transform = "scale(1.5)";
-          setTimeout(() => {
-            cartBadge.style.transform = "scale(1)";
-          }, 250);
+        const existingItem = cart.find(item => item.id === product.id);
+        if (existingItem) {
+          existingItem.quantity += qty;
+        } else {
+          cart.push({ id: product.id, quantity: qty });
         }
+        
+        saveCart();
+
         const origText = this.innerHTML;
         this.innerHTML = `✓ ${qty} Added!`;
         this.style.background = "var(--clr-green-mid)";
@@ -805,12 +841,177 @@ if (filterPills.length && shopGrid) {
 /* Placeholder background per product */
 function placeholderBg(id) {
   const map = {
-    "flower-pot": "linear-gradient(135deg,#e8f5ee,#c8e6d8)",
-    clock: "linear-gradient(135deg,#e0f2fe,#bae6fd)",
-    earrings: "linear-gradient(135deg,#fce7f3,#fbcfe8)",
-    organizer: "linear-gradient(135deg,#fef9c3,#fde68a)",
+    clock: "linear-gradient(135deg, #e0f2fe, #bae6fd)",
+    organizer: "linear-gradient(135deg, #fef9c3, #fde68a)",
+    container: "linear-gradient(135deg, #e8f5ee, #c8e6d8)",
+    rack: "linear-gradient(135deg, #f3f4f6, #d1d5db)",
+    round_table: "linear-gradient(135deg, #ede9fe, #ddd6fe)",
   };
-  return map[id] || "linear-gradient(135deg,#e8f5ee,#c8e6d8)";
+  return map[id] || "linear-gradient(135deg, #e8f5ee, #c8e6d8)";
+}
+
+/* ============================================================
+   CART PAGE RENDERING
+   ============================================================ */
+function renderCart() {
+  const container = document.getElementById("cart-items-container");
+  const summaryContainer = document.getElementById("cart-summary");
+  if (!container || !summaryContainer) return;
+
+  if (cart.length === 0) {
+    container.innerHTML = `
+      <div class="empty-cart animate-on-scroll">
+        <span class="empty-cart-icon">🛒</span>
+        <h2>Your cart is empty</h2>
+        <p>Looks like you haven't added any recycled treasures yet.</p>
+        <a href="shop.html" class="btn btn-primary">Discover Products</a>
+      </div>
+    `;
+    summaryContainer.style.display = "none";
+    
+    // Trigger animation
+    setTimeout(() => {
+      const empty = container.querySelector(".empty-cart");
+      if(empty) empty.classList.add("is-visible");
+    }, 100);
+    return;
+  }
+
+  summaryContainer.style.display = "block";
+  let html = "";
+  let subtotal = 0;
+
+  cart.forEach((item, index) => {
+    const product = PRODUCTS[item.id];
+    if (!product) return;
+    const itemTotal = product.price * item.quantity;
+    subtotal += itemTotal;
+
+    html += `
+      <div class="cart-item animate-on-scroll" style="transition-delay: ${index * 0.1}s">
+        <div class="cart-item-img">
+          <img src="${product.images && product.images.length > 0 ? product.images[0] : ''}" alt="${product.name}">
+          <div class="pd-img-placeholder" style="background:${placeholderBg(item.id)}; display: ${product.images && product.images.length > 0 ? 'none' : 'flex'}">
+            <span>${product.emoji}</span>
+          </div>
+        </div>
+        <div class="cart-item-info">
+          <span class="cart-item-cat">${product.category}</span>
+          <h3>${product.name}</h3>
+          <p class="cart-item-price">$ ${product.price}</p>
+        </div>
+        <div class="cart-item-actions">
+          <div class="qty-control">
+            <button class="qty-btn" onclick="updateQuantity('${item.id}', -1)">−</button>
+            <span class="qty-val">${item.quantity}</span>
+            <button class="qty-btn" onclick="updateQuantity('${item.id}', 1)">+</button>
+          </div>
+          <button class="remove-btn" onclick="removeFromCart('${item.id}')" aria-label="Remove item">
+            <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="2">
+              <path d="M3 6h18M19 6v14a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V6m3 0V4a2 2 0 0 1 2-2h4a2 2 0 0 1 2 2v2M10 11v6M14 11v6"/>
+            </svg>
+          </button>
+        </div>
+        <div class="cart-item-total">
+          $ ${itemTotal}
+        </div>
+      </div>
+    `;
+  });
+
+  container.innerHTML = html;
+  
+  // Summary calculations
+  const delivery = subtotal > 100 ? 0 : 9.99; 
+  const total = (subtotal + delivery).toFixed(2);
+  const displaySubtotal = subtotal.toFixed(2);
+
+  document.getElementById("subtotal-val").textContent = `$ ${displaySubtotal}`;
+  document.getElementById("delivery-val").textContent = delivery === 0 ? "FREE" : `$ ${delivery}`;
+  document.getElementById("total-val").textContent = `$ ${total}`;
+
+  // Trigger animations
+  container.querySelectorAll(".animate-on-scroll").forEach(el => {
+    setTimeout(() => el.classList.add("is-visible"), 100);
+  });
+}
+
+function updateQuantity(id, delta) {
+  const itemIndex = cart.findIndex(i => i.id === id);
+  if (itemIndex > -1) {
+    cart[itemIndex].quantity += delta;
+    if (cart[itemIndex].quantity <= 0) {
+      cart.splice(itemIndex, 1);
+    }
+    saveCart();
+    renderCart();
+  }
+}
+
+function removeFromCart(id) {
+  cart = cart.filter(i => i.id !== id);
+  saveCart();
+  renderCart();
+  showToast("Item removed from cart.");
+}
+
+/* ============================================================
+   CARD CHECKOUT DEMO (Visa/Mastercard)
+   ============================================================ */
+function openCardModal() {
+  const modal = document.getElementById("card-modal");
+  if (modal) {
+    modal.classList.add("active");
+    document.body.style.overflow = "hidden";
+  }
+}
+
+function closeCardModal() {
+  const modal = document.getElementById("card-modal");
+  if (modal) {
+    modal.classList.remove("active");
+    document.body.style.overflow = "";
+  }
+}
+
+function handleCardSubmit(event) {
+  event.preventDefault();
+  
+  const btn = document.getElementById("card-submit-btn");
+  const originalHTML = btn.innerHTML;
+  btn.disabled = true;
+  btn.innerHTML = `<span class="spinner-small"></span> Authorizing...`;
+
+  // Simulation timeline
+  setTimeout(() => {
+    btn.innerHTML = `<span class="spinner-small"></span> Securely Processing...`;
+    setTimeout(() => {
+      // Success state
+      const modalInlay = document.getElementById("card-modal-inlay");
+      if (modalInlay) {
+        modalInlay.innerHTML = `
+          <div class="payment-success animate-on-scroll is-visible">
+            <div class="success-icon-wrap">
+              <svg xmlns="http://www.w3.org/2000/svg" width="48" height="48" fill="none" viewBox="0 0 24 24" stroke="currentColor" stroke-width="3">
+                <path stroke-linecap="round" stroke-linejoin="round" d="M5 13l4 4L19 7" />
+              </svg>
+            </div>
+            <h2>Order Confirmed!</h2>
+            <p>Thank you for your purchase. A confirmation email has been sent to you.</p>
+            <div class="order-ref">Order ID: #ES-${Math.floor(Math.random() * 900000 + 100000)}</div>
+            <button class="btn btn-primary" onclick="window.location.href='index.html'" style="width:100%; justify-content:center; margin-top:1.5rem">Continue Shopping</button>
+          </div>
+        `;
+      }
+      cart = [];
+      saveCart();
+    }, 2500);
+  }, 2000);
+}
+
+// Initial renders
+if (document.getElementById("cart-items-container")) {
+  renderCart();
 }
 
 /* Keyboard accessibility on product cards */
